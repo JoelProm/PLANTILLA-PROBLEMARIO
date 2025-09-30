@@ -1,0 +1,245 @@
+
+\documentclass[12pt,a4paper]{report}
+
+% --------- Paquetes ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}   % Para imágenes
+\usepackage{xcolor}     % Colores
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}   % Índice interactivo
+\geometry{margin=2.5cm}
+
+% Definición de color azulmarino
+\definecolor{azulmarino}{RGB}{0,0,128}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=azulmarino,
+	urlcolor=blue,
+	citecolor=red
+}
+
+\begin{document}
+	
+	% --------- Portada ----------
+	\begin{titlepage}
+		\begin{minipage}[c][0.17\textheight][c]{0.25\textwidth}
+			\begin{center}
+				\includegraphics[width=3.7cm, height=3.7cm]{LOGOTEC}
+			\end{center}
+		\end{minipage}
+		\begin{minipage}[c][0.195\textheight][t]{0.75\textwidth}
+			\begin{center}
+				\vspace{0.3cm}
+				\textsc{\large TECNOLÓGICO NACIONAL DE MÉXICO}\\[0.5cm]
+				\vspace{0.3cm}
+				{\color{azulmarino}\hrule height2.5pt}
+				\vspace{.2cm}
+				{\color{azulmarino}\hrule height1pt}
+				\vspace{.8cm}
+				\textsc{CAMPUS COMALCALCO}\\[0.5cm]
+			\end{center}
+		\end{minipage}
+		
+		\begin{minipage}[c][0.81\textheight][t]{0.25\textwidth}
+			\vspace*{5mm}
+			\begin{center}
+				\hskip2.0mm
+				{\color{azulmarino}\vrule width1pt height13cm}
+				\vspace{5mm}
+				\hskip2pt
+				{\color{azulmarino}\vrule width2.5pt height13cm}
+				\hskip2mm
+				{\color{azulmarino}\vrule width1pt height13cm} \\ 
+				\vspace{5mm}
+				\includegraphics[height=2.5cm]{logob}
+			\end{center}
+		\end{minipage}
+		\begin{minipage}[c][0.81\textheight][t]{0.75\textwidth}
+			\begin{center}
+				\vspace{0.5cm}
+				
+				{\large\scshape Ingeniería Mecatrónica}\\[.2in]
+				
+				\vspace{1.0cm}            
+				
+				\textsc{\Huge PROBLEMARIO}\\[0.5cm]
+				\textsc{\large Tema 1: Introducción a los Métodos Numéricos}\\[0.5cm]
+				\textsc{\large Metodos Numericos}\\[0.5cm]
+				\textsc{\large Presentan:}\\[0.5cm]
+				\textsc{\large {Arias Castellanos Joel\\Ceballos Sánchez Giovanni De Jesús\\Córdova Sánchez Luis Adalberto\\Gallegos Jiménez Erik Asunción \\Sánchez Pacheco Jonathan Del Carmen}}\\[2cm]          
+				
+				\vspace{0.4cm}
+				
+				{\large\scshape Docente:\\[0.3cm] {M.C.M.A. Braly Guadalupe Peralta Reyes }}\\[.2in]
+				
+				\vspace{0.4cm}
+				
+				\large{Comalcalco, Tabasco, a 9 de Septiembre de 2025}
+			\end{center}
+		\end{minipage}
+	\end{titlepage}
+	
+	% --------- Índice ----------
+	\tableofcontents
+	\newpage
+	
+	% --------- Problemario ----------
+	\chapter{Problemario 1. Introduccion a los Metodos Numericos}
+	\section*{Resolucion de ejercicios}
+	\addcontentsline{toc}{section}{Resolucion de Ejercicios}
+	
+	% ---------------- EJERCICIO 1 ----------------
+	\subsection*{Ejercicio 1 --- Error en sensores de posición}
+	\addcontentsline{toc}{subsection}{Ejercicio 1 --- Error en sensores de posición}
+	
+	\textbf{Enunciado.} Un sensor de posición entrega una medición de $x=2.357$ mm, mientras que el valor real de referencia es $x_{\text{real}}=2.345$ mm. Se pide calcular el error absoluto, relativo y porcentual de la medición.
+	
+	\textbf{Resolución.}
+	\begin{itemize}
+		\item Error absoluto: $|2.357-2.345|=0.012$ mm.
+		\item Error relativo: $0.012/2.345=0.005117$.
+		\item Error porcentual: $0.5117\%$.
+	\end{itemize}
+	
+	\textbf{Conclusión.} La lectura es muy precisa: el desvío es de 0.012 mm (aprox. 0.51\%).
+	
+	% ---------------- EJERCICIO 2 ----------------
+	\subsection*{Ejercicio 2 --- Precisión en actuadores lineales}
+	\addcontentsline{toc}{subsection}{Ejercicio 2 --- Precisión en actuadores lineales}
+	
+	\textbf{Enunciado.} Un actuador lineal es programado para desplazarse $150.0$ mm, pero el desplazamiento real registrado es de $149.8$ mm. Calcular el error absoluto, relativo y el porcentaje de error si el mismo error absoluto se mantiene en un desplazamiento de $500$ mm.
+	
+	\textbf{Resolución.}
+	\begin{itemize}
+		\item Error absoluto: $|149.8-150.0|=0.2$ mm.
+		\item Error relativo (a 150 mm): $0.2/150=0.001333 \approx 0.1333\%$.
+		\item Para 500 mm: $0.2/500=0.0004 \approx 0.04\%$.
+	\end{itemize}
+	
+	\textbf{Conclusión.} El mismo error absoluto pesa menos a mayores recorridos.
+	
+	% ---------------- EJERCICIO 3 ----------------
+	\subsection*{Ejercicio 3 --- Redondeo en control de motores}
+	\addcontentsline{toc}{subsection}{Ejercicio 3 --- Redondeo en control de motores}
+	
+	\textbf{Enunciado.} En el control de un motor se utiliza la señal de entrada $u=3.14159265$ V. Se pide redondear este valor a 3 y 4 decimales, y calcular el error de redondeo en cada caso.
+	
+	\textbf{Resolución.}
+	\begin{itemize}
+		\item A 3 decimales: $3.142$. Error: $|3.142-3.14159265|=0.00040735$.
+		\item A 4 decimales: $3.1416$. Error: $|3.1416-3.14159265|=0.00000735$.
+	\end{itemize}
+	
+	\textbf{Conclusión.} Más decimales producen menor error.
+	
+	% ---------------- EJERCICIO 4 ----------------
+	\subsection*{Ejercicio 4 --- Truncamiento en cinemática inversa}
+	\addcontentsline{toc}{subsection}{Ejercicio 4 --- Truncamiento en cinemática inversa}
+	
+	\textbf{Enunciado.} Para el cálculo de la cinemática inversa de un robot, se obtiene el ángulo $\theta=1.047197551$ rad. Truncar este valor a 4 y 5 decimales y determinar el error de truncamiento en cada caso.
+	
+	\textbf{Resolución.}
+	\begin{itemize}
+		\item A 4 decimales: $1.0471$. Error: $9.7551\times10^{-5}$.
+		\item A 5 decimales: $1.04719$. Error: $7.5510\times10^{-6}$.
+	\end{itemize}
+	
+	\textbf{Conclusión.} El truncamiento sesga a la baja, pero mejora con más decimales.
+	
+	% ---------------- EJERCICIO 5 ----------------
+	\subsection*{Ejercicio 5 --- Convergencia en control de temperatura}
+	\addcontentsline{toc}{subsection}{Ejercicio 5 --- Convergencia en control de temperatura}
+	
+	\textbf{Enunciado.} En un sistema de control de temperatura se establece como objetivo $75.0^\circ C$. El controlador genera la siguiente secuencia de temperaturas: $70.2, 73.5, 74.3, 74.8, 75.0$. Se pide calcular los errores absolutos y relativos en cada paso y demostrar la convergencia hacia el valor deseado.
+	
+	\textbf{Resolución.}
+	\begin{itemize}
+		\item Errores absolutos: $4.8, 1.5, 0.7, 0.2, 0.0$.
+		\item Errores relativos porcentuales: $6.40\%, 2.00\%, 0.933\%, 0.267\%, 0.00\%$.
+		\item Cocientes $e_{k+1}/e_k$: $0.3125, 0.4667, 0.2857$.
+	\end{itemize}
+	
+	\textbf{Conclusión.} El sistema converge al set-point con rapidez.
+	
+	% ---------------- EJERCICIO 6 ----------------
+	\subsection*{Ejercicio 6 --- Precisión en encoders rotativos}
+	\addcontentsline{toc}{subsection}{Ejercicio 6 --- Precisión en encoders rotativos}
+	
+	\textbf{Enunciado.} Un encoder rotativo de 2048 pulsos por revolución mide un ángulo de $45.25^\circ$. Calcular el número de pulsos ideales que debería registrar el sensor. Si en la práctica se obtienen 258 pulsos, calcular el error absoluto y relativo.
+	
+	\textbf{Resolución.}
+	\begin{itemize}
+		\item Pulsos ideales: $2048\times\tfrac{45.25}{360}=257.4222$.
+		\item Error absoluto: $0.5778$ pulsos.
+		\item Error relativo: $0.2245\%$.
+	\end{itemize}
+	
+	\textbf{Conclusión.} El error es muy bajo: menos de 1 pulso.
+	
+	% ---------------- EJERCICIO 7 ----------------
+	\subsection*{Ejercicio 7 --- Propagación de errores en mediciones}
+	\addcontentsline{toc}{subsection}{Ejercicio 7 --- Propagación de errores en mediciones}
+	
+	\textbf{Enunciado.} En un sistema de medición de velocidad de un motor se registran los valores: 1520, 1518, 1523 y 1519 RPM, siendo la velocidad nominal 1520 RPM. Calcular el error absoluto de cada medición, el error relativo promedio y el error porcentual máximo.
+	
+	\textbf{Resolución.}
+	\begin{itemize}
+		\item Errores absolutos: $0,2,3,1$ RPM.
+		\item Error relativo promedio: $0.0987\%$.
+		\item Error porcentual máximo: $0.1974\%$.
+	\end{itemize}
+	
+	\textbf{Conclusión.} La dispersión es muy baja.
+	
+	% ---------------- EJERCICIO 8 ----------------
+	\subsection*{Ejercicio 8 --- Convergencia en seguimiento de trayectoria}
+	\addcontentsline{toc}{subsection}{Ejercicio 8 --- Convergencia en seguimiento de trayectoria}
+	
+	\textbf{Enunciado.} Durante el seguimiento de la trayectoria de un robot, se registran los siguientes errores de posición en mm: $2.5, 1.8, 1.2, 0.7, 0.3$. Determinar si existe convergencia hacia cero, estimar la tasa de convergencia y calcular el error relativo en cada paso.
+	
+	\textbf{Resolución.}
+	\begin{itemize}
+		\item Tasas: $0.72, 0.667, 0.583, 0.429$. Media: $0.60$.
+		\item Errores relativos: $72.0\%, 66.7\%, 58.3\%, 42.9\%$.
+	\end{itemize}
+	
+	\textbf{Conclusión.} La convergencia es clara y rápida.
+	
+	% ---------------- EJERCICIO 9 ----------------
+	\subsection*{Ejercicio 9 --- Exactitud en visión artificial}
+	\addcontentsline{toc}{subsection}{Ejercicio 9 --- Exactitud en visión artificial}
+	
+	\textbf{Enunciado.} Un sistema de visión artificial mide la posición de un objeto como $(320.5,240.3)$ píxeles, mientras que la posición real es $(320.0,240.0)$ píxeles. Sabiendo que cada píxel corresponde a $0.1$ mm, calcular el error absoluto en píxeles, el error en milímetros y el error relativo.
+	
+	\textbf{Resolución.}
+	\begin{itemize}
+		\item Error en píxeles: $\sqrt{0.5^2+0.3^2}=0.5831$.
+		\item En mm: $0.0583$.
+		\item Error relativo: $0.1458\%$.
+	\end{itemize}
+	
+	\textbf{Conclusión.} Localización muy precisa.
+	
+	% ---------------- EJERCICIO 10 ----------------
+	\subsection*{Ejercicio 10 --- Errores en modelado dinámico}
+	\addcontentsline{toc}{subsection}{Ejercicio 10 --- Errores en modelado dinámico}
+	
+	\textbf{Enunciado.} Se considera un modelo dinámico de la forma $m\ddot x+c\dot x+kx=F(t)$ con los valores estimados $m=1.05$ kg, $c=0.98$ Ns/m y $k=49.5$ N/m. Los valores reales son $m=1.00$ kg, $c=1.00$ Ns/m y $k=50.0$ N/m. Se pide calcular el error relativo de cada parámetro, identificar cuál es mayor y analizar su efecto sobre la respuesta del sistema.
+	
+	\textbf{Resolución.}
+	\begin{itemize}
+		\item $m$: 5\% error.
+		\item $c$: 2\% error.
+		\item $k$: 1\% error.
+		\item Mayor error en masa.
+		\item Frecuencia natural: real $7.071$, estimada $6.866$ ($-2.90\%$).
+		\item Amortiguamiento: real $0.0707$, estimado $0.0680$ ($-3.88\%$).
+	\end{itemize}
+	
+	\textbf{Conclusión.} El sesgo en masa domina: sistema más lento y menos amortiguado.
+	
+\end{document}
+

@@ -1,0 +1,42 @@
+\documentclass[12pt,oneside]{book}
+%
+\input{codigofuente/paquetes}
+
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}  % Limpiar encabezado y pie de página
+
+% Encabezado
+\fancyhead[L]{\scriptsize\leftmark}  % Texto de la izquierda (títulos de secciones o capítulos)
+\fancyhead[R]{\scriptsize\thepage}   % Número de página a la derecha
+
+% Personalización de las líneas de encabezado y pie de página
+\renewcommand{\headrulewidth}{0.8pt}  % Grosor de la línea del encabezado
+\renewcommand{\footrulewidth}{0.5pt}  % Grosor de la línea del pie de página
+
+
+
+
+
+
+
+
+\begin{document}
+\frontmatter
+
+\include{codigofuente/caratula}
+
+
+\tableofcontents
+
+
+\mainmatter
+
+\include{codigofuente/TEMA1}	
+
+
+
+
+\end{document}
